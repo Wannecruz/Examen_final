@@ -1,0 +1,43 @@
+﻿@page
+@model proyectofinal.Pages.Ventas.BorrarModel
+@{
+    ViewData["Title"] = "Anulación de venta";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Anular venta</div>
+
+            <form method="POST">
+                <input type="hidden" asp-for="VentaVm.Venta.CodigoVenta" />
+                <div class="mb-3">
+                    <label asp-for="Venta.CodigoCliente.NombresCliente" class="form-label"></label>
+                    <input asp-for="Venta.CodigoCliente.NombresCliente" class="form-control" readonly />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Venta.CodigoCliente.ApellidosCliente" class="form-label"></label>
+                    <input asp-for="Venta.CodigoCliente.ApellidosCliente" class="form-control" readonly />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Venta.CodigoCliente.NITCliente" class="form-label"></label>
+                    <input asp-for="Venta.CodigoCliente.NITCliente" class="form-control" readonly />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="VentaVm.Venta.FechaVenta" class="form-label"></label>
+                    <input type="date" asp-for="VentaVm.Venta.FechaVenta" class="form-control" readonly />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="VentaVm.Venta.EstadoVenta" class="form-label"></label>
+                    <input type="text" asp-for="VentaVm.Venta.EstadoVenta" class="form-control" readonly />
+                </div>
+                <button type="submit" class="btn btn-primary">Borrar Venta</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

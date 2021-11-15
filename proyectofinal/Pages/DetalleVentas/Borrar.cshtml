@@ -1,0 +1,37 @@
+﻿@page
+@model proyectofinal.Pages.DetalleVentas.BorrarModel
+@{
+    ViewData["Title"] = "Producto comprado";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Devolución de producto</div>
+
+            <div>
+                <form method="POST">
+                    <input type="hidden" asp-for="DetalleVentaVM.DetalleVenta.CodigoDetalle" />
+                    <div class="mb-3">
+                        <label asp-for="DetalleVentaVM.DetalleVenta.EstadoProductoVenta" class="form-label"></label>
+                        <input asp-for="DetalleVentaVM.DetalleVenta.EstadoProductoVenta" class="form-control" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DetalleVentaVM.DetalleVenta.VentaId" class="form-label"></label>
+                        <input asp-for="DetalleVentaVM.DetalleVenta.VentaId" class="form-control" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DetalleVentaVM.DetalleVenta.ProductoId" class="form-label"></label>
+                        <input asp-for="DetalleVentaVM.DetalleVenta.ProductoId" class="form-control" readonly />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Borrar Producto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="../Ventas/Index" asp-route-id="" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

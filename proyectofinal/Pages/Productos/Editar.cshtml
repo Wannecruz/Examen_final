@@ -1,0 +1,53 @@
+﻿@page
+@model proyectofinal.Pages.Productos.EditarModel
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Editar un producto</div>
+
+            <form method="POST">
+                <input type="hidden" asp-for="ProductoVm.Producto.CodigoProducto" />
+                <div class="mb-3">
+                    <label asp-for="ProductoVm.Producto.NombreProducto" class="form-label"></label>
+                    <input asp-for="ProductoVm.Producto.NombreProducto" class="form-control" />
+                    <span asp-validation-for="ProductoVm.Producto.NombreProducto" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductoVm.Producto.Descripcion" class="form-label"></label>
+                    <input asp-for="ProductoVm.Producto.Descripcion" class="form-control" />
+                    <span asp-validation-for="ProductoVm.Producto.Descripcion" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductoVm.Producto.Ubicacion" class="form-label"></label>
+                    <input asp-for="ProductoVm.Producto.Ubicacion" class="form-control" />
+                    <span asp-validation-for="ProductoVm.Producto.Ubicacion" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductoVm.Producto.ExistenciaMinima" class="form-label"></label>
+                    <input type="number" asp-for="ProductoVm.Producto.ExistenciaMinima" class="form-control" />
+                    <span asp-validation-for="ProductoVm.Producto.ExistenciaMinima" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductoVm.Producto.FechaVencimiento" class="form-label"></label>
+                    <input type="date" asp-for="ProductoVm.Producto.FechaVencimiento" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductoVm.Producto.CodigoProveedor" class="form-label"></label>
+                    <select class="form-select form-control" asp-for="ProductoVm.Producto.ProveedorId" asp-items="@(new SelectList(Model.ProductoVm.ListaProveedores, "CodigoProveedor", "NombreProveedor"))" aria-label="Default select example">
+                    </select>
+                    <span asp-validation-for="ProductoVm.Producto.CodigoProveedor" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Editar Producto</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

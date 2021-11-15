@@ -1,0 +1,47 @@
+﻿@page
+@model proyectofinal.Pages.Clientes.BorrarModel
+@{
+    ViewData["Title"] = "Borrar Cliente";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Editar un cliente</div>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Clientee.CodigoCliente"/>
+                <div class="mb-3">
+                    <label asp-for="Clientee.NombresCliente" class="form-label"></label>
+                    <input asp-for="Clientee.NombresCliente" class="form-control" readonly/>
+                    <span asp-validation-for="Clientee.NombresCliente" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Clientee.ApellidosCliente" class="form-label"></label>
+                    <input asp-for="Clientee.ApellidosCliente" class="form-control" readonly/>
+                    <span asp-validation-for="Clientee.ApellidosCliente" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Clientee.DireccionCliente" class="form-label"></label>
+                    <input asp-for="Clientee.DireccionCliente" class="form-control" readonly/>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Clientee.CategoriaCliente" class="form-label"></label>
+                    <input asp-for="Clientee.CategoriaCliente" class="form-control" readonly/>
+                    <span asp-validation-for="Clientee.CategoriaCliente" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Clientee.NITCliente" class="form-label"></label>
+                    <input asp-for="Clientee.NITCliente" class="form-control" readonly/>
+                    <input asp-for="Clientee.NITCliente" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Borrar Cliente</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

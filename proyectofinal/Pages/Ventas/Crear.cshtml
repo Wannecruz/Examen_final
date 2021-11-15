@@ -1,0 +1,40 @@
+﻿@page
+@model proyectofinal.Pages.Ventas.CrearModel
+@{
+    ViewData["Title"] = "Agregar Venta";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Agregar una venta</div>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label asp-for="VentaVM.Venta.FechaVenta" class="form-label"></label>
+                    <input type="date" asp-for="VentaVM.Venta.FechaVenta" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="VentaVM.Venta.TipoVenta" class="form-label"></label>
+                    <select class="form-select form-control" asp-for="VentaVM.Venta.TipoVenta" aria-label="Default select example">
+                        <option value="VentaXMenor">VentaXMenor</option>
+                        <option value="VentaXMayor">VentaXMayor</option>
+                    </select>
+                    <span asp-validation-for="VentaVM.Venta.TipoVenta" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="VentaVM.Venta.CodigoCliente" class="form-label"></label>
+                    <select class="form-select form-control" asp-for="VentaVM.Venta.ClienteId" asp-items="@(new SelectList(Model.VentaVM.ListaClientes, "CodigoCliente", "NombresCliente"))" aria-label="Default select example">
+                    </select>
+                    <span asp-validation-for="VentaVM.Venta.CodigoCliente" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar Venta</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

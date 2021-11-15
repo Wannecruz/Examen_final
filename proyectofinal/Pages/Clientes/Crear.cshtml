@@ -1,0 +1,45 @@
+﻿@page
+@model proyectofinal.Pages.Clientes.CrearModel
+@{
+    ViewData["Title"] = "Crear Cliente";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Crear un cliente</div>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label asp-for="Cliente.NombresCliente" class="form-label"></label>
+                    <input asp-for="Cliente.NombresCliente" class="form-control" />
+                    <span asp-validation-for="Cliente.NombresCliente" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.ApellidosCliente" class="form-label"></label>
+                    <input asp-for="Cliente.ApellidosCliente" class="form-control" />
+                    <span asp-validation-for="Cliente.ApellidosCliente" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.DireccionCliente" class="form-label"></label>
+                    <input asp-for="Cliente.DireccionCliente" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.CategoriaCliente" class="form-label"></label>
+                    <input asp-for="Cliente.CategoriaCliente" class="form-control" />
+                    <span asp-validation-for="Cliente.CategoriaCliente" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Cliente.NITCliente" class="form-label"></label>
+                    <input asp-for="Cliente.NITCliente" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Crear Cliente</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@page
+@model proyectofinal.Pages.Productos.DetalleModel
+@{
+    ViewData["Title"] = "Detalle Producto";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Detalle de producto</div>
+            <ul class="list-group">
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.CodigoProducto)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.NombreProducto)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.Descripcion)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.Ubicacion)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.ExistenciaMinima)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.FechaVencimiento)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.CodigoProveedor.CodigoProveedor)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Producto.CodigoProveedor.NombreProveedor)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

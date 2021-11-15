@@ -1,0 +1,22 @@
+﻿@page
+@model proyectofinal.Pages.Proveedores.DetalleModel
+@{
+    ViewData["Title"] = "Detalle Proveedor";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Detalle de proveedor</div>
+            <ul class="list-group">
+                <li class="list-group-item">@Html.DisplayFor(m => m.Proveedor.CodigoProveedor)</li>
+                <li class="list-group-item">@Html.DisplayFor(m => m.Proveedor.NombreProveedor)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>

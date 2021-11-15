@@ -1,0 +1,28 @@
+﻿@page
+@model proyectofinal.Pages.Proveedores.EditarModel
+@{
+    ViewData["Title"] = "Editar Proveedor";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="text-info">Editar un proveedor</div>
+
+            <form method="POST">
+                <input type="hidden" asp-for="Proveedor.CodigoProveedor"/>
+                <div class="mb-3">
+                    <label asp-for="Proveedor.NombreProveedor" class="form-label"></label>
+                    <input asp-for="Proveedor.NombreProveedor" class="form-control" />
+                    <span asp-validation-for="Proveedor.NombreProveedor" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Editar Proveedor</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-success">Volver</a>
+        </div>
+    </div>
+</div>
